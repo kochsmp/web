@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Meta Tags für Suchmaschinenoptimierung -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koch-SMP Minecraft Server: Entdecke einzigartige Orte wie Die Vergessene Stadt, Rexania, BenxBatus Base und Noxas Base. Trete unserer Community bei!">
+    <meta name="keywords" content="Minecraft, Server, Koch-SMP, SMP, Minecraft Server, Die Vergessene Stadt, Rexania, BenxBatus Base, Noxas Base, Minecraft Bauprojekte">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Koch-SMP Team">
+    <meta property="og:title" content="Koch-SMP Minecraft Server">
+    <meta property="og:description" content="Entdecke die beeindruckenden Bauprojekte auf dem Koch-SMP Minecraft Server.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.koch-smp.de">
+    <!-- <meta property="og:image" content="url_zum_bild"> -->
+    
+    <title>Koch-SMP Minecraft Server | Fantastische Bauprojekte und Community</title>
+    
+    <style>
+        :root {
+            --primary-color: #3b8526;
+            --secondary-color: #774e24;
+            --accent-color: #c4a86f;
+            --dark-color: #1a1a1a;
+            --light-color: #f5f5f5;
+            --minecraft-dirt: #5e4327;
+            --minecraft-grass: #5daa5d;
+            --minecraft-stone: #8f8f8f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23333" width="100" height="100"/><rect fill="%23222" width="50" height="50" x="0" y="0"/><rect fill="%23222" width="50" height="50" x="50" y="50"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="%233b8526" width="200" height="200"/><path d="M0,0 L200,200 M200,0 L0,200" stroke="%232a5c1a" stroke-width="4"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0 #000;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .places {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 0 #000;
+        }
+        
+        .place-card {
+            background-color: rgba(59, 133, 38, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 768px) {
+            .place-card {
+                flex-direction: row;
+            }
+            
+            .place-card:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+        
+        .place-image {
+            flex: 1;
+            min-height: 300px;
+            background-color: var(--minecraft-stone);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .place-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+            z-index: 1;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            height: 100%;
+        }
+        
+        .image-cell {
+            background-color: var(--minecraft-dirt);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+        
+        .place-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .place-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .place-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-tag {
+            background-color: var(--dark-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .server-info {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .server-ip {
+            font-family: monospace;
+            background-color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            border: 1px solid var(--accent-color);
+        }
+        
+        /* Minecraft-spezifische Stile */
+        .pixel-art {
+            image-rendering: pixelated;
+        }
+        
+        .grass-block {
+            background: linear-gradient(to bottom, var(--minecraft-grass) 10%, var(--minecraft-dirt) 10%);
+            border: 2px solid #3a2a1e;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Koch-SMP</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#places">Orte</a></li>
+                    <li><a href="#join">Beitreten</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Willkommen auf Koch-SMP</h1>
+            <p>Entdecke die fantastischen Bauprojekte unserer Minecraft-Community und werde Teil unseres Servers!</p>
+            <a href="#join" class="btn">Server beitreten</a>
+        </div>
+    </section>
+
+    <section class="places container" id="places">
+        <h2 class="section-title">Bemerkenswerte Orte</h2>
+        
+        <div class="place-card">
+            <div class="place-image">
+                <div class="image-grid">
+                    <div class="image-cell">Bild 1: Die Vergessene Stadt - Übersicht</div>
+                    <div class="image-cell">Bild 2: Die Vergessene Stadt - Detailansicht</div>
+                </div>
+            </div>
+            <div class="place-content">
+                <h3 class="place-title">Die Vergessene Stadt</h3>
+                <div class="place-meta">
+                    <span class="meta-tag">Entfernt: +10.000 Blöcke</span>
+                    <span class="meta-tag">Schwierig zu finden</span>
+                    <span class="meta-tag">Historisch</span>
+                </div>
+                <p>Diese uralte Stadt liegt mehr als 10.000 Blöcke vom Spawn entfernt und birgt viele Geheimnisse. Nur die abenteuerlustigsten Spieler finden den Weg zu diesem mysteriösen Ort, der einst eine blühende Zivilisation beherbergte.</p>
+                <p>Die Architektur zeigt erstaunliche Handwerkskunst mit detailverliebten Gebäuden, versteckten Gängen und monumentalen Strukturen, die von einer vergangenen Ära zeugen.</p>
+            </div>
+        </div>
+        
+        <div class="place-card">
+            <div class="place-image">
+                <div class="image-grid">
+                    <div class="image-cell">Bild 1: Rexania - Villa von alesim2003</div>
+                    <div class="image-cell">Bild 2: Rexania - Häuser und Grundstücke</div>
+                </div>
+            </div>
+            <div class="place-content">
+                <h3 class="place-title">Rexania (neuer Name unbekannt)</h3>
+                <div class="place-meta">
+                    <span class="meta-tag">Ehemals: Rex_149</span>
+                    <span class="meta-tag">Aktuell: wemmbu2003</span>
+                    <span class="meta-tag">Wohngebiet</span>
+                </div>
+                <p>Dieser Ort wurde ursprünglich von Rex_149 gegründet und wird jetzt von alesim2003 (jetzt wemmbu2003) weiterentwickelt. Rexania bietet mehrere Häuser, eine prächtige Villa und freie Grundstücke für neue Bewohner.</p>
+                <p>Die Architektur kombiniert moderne Bautechniken mit klassischem Minecraft-Charme. Die Villa verfügt über einen Swimmingpool, einen weitläufigen Garten und eine spektakuläre Aussicht auf die umliegende Landschaft.</p>
+            </div>
+        </div>
+        
+        <div class="place-card">
+            <div class="place-image">
+                <div class="image-grid">
+                    <div class="image-cell">Bild 1: BenxBatus Base - Außenansicht</div>
+                    <div class="image-cell">Bild 2: BenxBatus Base - Innenansicht</div>
+                </div>
+            </div>
+            <div class="place-content">
+                <h3 class="place-title">BenxBatus Base</h3>
+                <div class="place-meta">
+                    <span class="meta-tag">Technisch</span>
+                    <span class="meta-tag">Innovativ</span>
+                    <span class="meta-tag">Redstone-Projekte</span>
+                </div>
+                <p>BenxBatus hat eine der technisch fortschrittlichsten Basen auf dem Server geschaffen. Hier findest du ausgeklügelte Redstone-Mechanismen, automatische Farmen und innovative Maschinen, die das Spielerlebnis verbessern.</p>
+                <p>Die Base ist nicht nur funktional, sondern auch ästhetisch ansprechend gestaltet. Ein Besuch lohnt sich für alle, die sich für Redstone und technische Innovationen in Minecraft interessieren.</p>
+            </div>
+        </div>
+        
+        <div class="place-card">
+            <div class="place-image">
+                <div class="image-grid">
+                    <div class="image-cell">Bild 1: Noxas Base - Außenansicht</div>
+                    <div class="image-cell">Bild 2: Noxas Base - Besondere Features</div>
+                </div>
+            </div>
+            <div class="place-content">
+                <h3 class="place-title">Noxas Base</h3>
+                <div class="place-meta">
+                    <span class="meta-tag">Architektonisch</span>
+                    <span class="meta-tag">Detailverliebt</span>
+                    <span class="meta-tag">Einzigartig</span>
+                </div>
+                <p>Noxas hat eine Base geschaffen, die durch ihre architektonische Brillanz und Liebe zum Detail besticht. Jeder Winkel zeigt durchdachtes Design und kreative Gestaltungsideen.</p>
+                <p>Von der Landschaftsgestaltung bis hin zur Innenarchitektur - Noxas Base ist ein Meisterwerk des Minecraft-Baus. Besucher können sich von der kreativen Gestaltung inspirieren lassen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="join">
+        <div class="server-info">
+            <h2 class="section-title">Dem Server beitreten</h2>
+            <p>Möchtest du Teil unserer Community werden und diese fantastischen Orte selbst erkunden? Folge diesen Schritten:</p>
+            <ol style="text-align: left; max-width: 500px; margin: 1rem auto;">
+                <li>Öffne Minecraft und gehe zum Multiplayer-Menü</li>
+                <li>Klicke auf "Server hinzufügen"</li>
+                <li>Gib die Server-IP ein:</li>
+            </ol>
+            <div class="server-ip">geheim</div>
+        </div>
+    </section>
+
+    <footer id="about">
+        <div class="container">
+            <p>Koch-SMP Minecraft Server © 2025</p>
+            <p>Alle Rechte vorbehalten. Minecraft ist eine Marke von Mojang Studios.</p>
+            <p>Diese Seite ist nicht mit Mojang oder Microsoft verbunden.</p>
+        </div>
+    </footer>
+</body>
+</html>
