@@ -13,7 +13,7 @@
     <meta property="og:description" content="Entdecke die beeindruckenden Bauprojekte auf dem Koch-SMP Minecraft Server.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kochsmp.github.io/web/">
-    <meta property="og:image" content="KochSMP_Serverbild1.png">
+    <!-- <meta property="og:image" content="url_zum_bild"> -->
     
     <title>Koch-SMP Minecraft Server | Fantastische Bauprojekte und Community</title>
     
@@ -86,34 +86,63 @@
             margin-bottom: 1rem;
         }
         
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem 0;
+        .custom-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 1.5rem 0;
+            text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            position: relative;
             border-bottom: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .custom-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, 
+                rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+            z-index: 1;
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .banner-title {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+            margin-bottom: 0.5rem;
+        }
+        
+        .banner-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 0 #000;
+            margin-bottom: 1.5rem;
         }
         
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 1.5rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .nav-links a {
@@ -121,12 +150,16 @@
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
-            padding: 0.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--accent-color);
         }
         
         .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
         }
         
         .hero {
@@ -383,12 +416,25 @@
         
         /* Responsive Design */
         @media (max-width: 767px) {
-            .nav-links {
-                display: none;
-            }
-            
             .banner-overlay h1 {
                 font-size: 2rem;
+            }
+            
+            .banner-title {
+                font-size: 2rem;
+            }
+            
+            .banner-subtitle {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.8rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
             }
             
             .hero h2 {
@@ -411,7 +457,7 @@
 </head>
 <body>
     <div class="server-banner">
-        <!-- Ersetze 'KochSMP_Serverbild1.png' mit dem Pfad zu deinem Server-Bild -->
+        <!-- Ersetze 'server_banner.jpg' mit dem Pfad zu deinem Server-Bild -->
         <img src="KochSMP_Serverbild1.png" alt="Koch-SMP Server Banner">
         <div class="banner-overlay">
             <div>
@@ -421,10 +467,11 @@
         </div>
     </div>
 
-    <header>
-        <div class="container">
+    <div class="custom-banner">
+        <div class="container banner-content">
+            <h2 class="banner-title">Koch-SMP</h2>
+            <p class="banner-subtitle">Dein Minecraft-Server für kreative Bauprojekte</p>
             <nav>
-                <div class="logo">Koch-SMP</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#places">Orte</a></li>
@@ -434,7 +481,7 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    </div>
 
     <section class="hero" id="home">
         <div class="container">
@@ -486,7 +533,7 @@
                 </div>
             </div>
             <div class="place-content">
-                <h3 class="place-title">Magic Hut</h3>
+                <h3 class="place-title">BenxBatu Base</h3>
                 <div class="place-meta">
                     <span class="meta-tag">Architektonisch</span>
                     <span class="meta-tag">Innovativ</span>
@@ -536,14 +583,14 @@
                 </div>
             </div>
             <div class="place-content">
-                <h3 class="place-title">absichtliche Ruine</h3>
+                <h3 class="place-title">Noxas Base</h3>
                 <div class="place-meta">
                     <span class="meta-tag">Architektonisch</span>
                     <span class="meta-tag">Detailverliebt</span>
                     <span class="meta-tag">Einzigartig</span>
                 </div>
                 <p>Noxa (früher Pekka) hat eine Base geschaffen, die durch ihre architektonische Brillanz und Liebe zum Detail besticht. Jeder Winkel zeigt durchdachtes Design und kreative Gestaltungsideen.</p>
-                <p>Von der Landschaftsgestaltung bis hin zur Innenarchitektur - absichtliche Ruine ist ein Meisterwerk des Minecraft-Baus. Besucher können sich von der kreative Gestaltung inspirieren lassen.</p>
+                <p>Von der Landschaftsgestaltung bis hin zur Innenarchitektur - Noxas Base ist ein Meisterwerk des Minecraft-Baus. Besucher können sich von der kreative Gestaltung inspirieren lassen.</p>
             </div>
         </div>
         
