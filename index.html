@@ -4,8 +4,8 @@
     <!-- Meta Tags für Suchmaschinenoptimierung -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Koch-SMP Minecraft Server: Entdecke einzigartige Orte wie Die Vergessene Stadt, Rexania, BenxBatus Base und Noxas Base. Trete unserer Community bei!">
-    <meta name="keywords" content="Minecraft, Server, Koch-SMP, SMP, Minecraft Server, Die Vergessene Stadt, Rexania, BenxBatus Base, Noxas Base, Minecraft Bauprojekte">
+    <meta name="description" content="Koch-SMP Minecraft Server: Entdecke einzigartige Orte wie Die Vergessene Stadt, Rexania, BenxBatu Base und Noxa Base. Trete unserer Community bei!">
+    <meta name="keywords" content="Minecraft, Server, Koch-SMP, SMP, Minecraft Server, Die Vergessene Stadt, Rexania, BenxBatu Base, Noxa Base, Minecraft Bauprojekte">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="author" content="Koch-SMP Team">
@@ -21,12 +21,14 @@
         :root {
             --primary-color: #3b8526;
             --secondary-color: #774e24;
-            --accent-color: #c4a86f;
+            --accent-color: #ffd700;
             --dark-color: #1a1a1a;
             --light-color: #f5f5f5;
             --minecraft-dirt: #5e4327;
             --minecraft-grass: #5daa5d;
             --minecraft-stone: #8f8f8f;
+            --button-color: #000000;
+            --button-glow: #ffd700;
         }
         
         * {
@@ -48,6 +50,40 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        .server-banner {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .server-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .banner-overlay h1 {
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 #000;
+            margin-bottom: 1rem;
         }
         
         header {
@@ -97,28 +133,28 @@
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="%233b8526" width="200" height="200"/><path d="M0,0 L200,200 M200,0 L0,200" stroke="%232a5c1a" stroke-width="4"/></svg>');
             background-size: cover;
             background-position: center;
-            padding: 6rem 0;
+            padding: 4rem 0;
             text-align: center;
             margin-bottom: 3rem;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
+        .hero h2 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 0 #000;
+            text-shadow: 2px 2px 0 #000;
             color: white;
         }
         
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
         }
         
         .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
+            background-color: var(--button-color);
+            color: var(--accent-color);
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
             text-decoration: none;
@@ -126,12 +162,14 @@
             margin-top: 2rem;
             transition: all 0.3s ease;
             border: 2px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         
         .btn:hover {
             background-color: var(--accent-color);
+            color: var(--button-color);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px var(--button-glow);
         }
         
         .places {
@@ -191,6 +229,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             height: 100%;
+            padding: 10px;
         }
         
         .image-cell {
@@ -200,6 +239,13 @@
             align-items: center;
             color: rgba(255, 255, 255, 0.7);
             font-style: italic;
+            overflow: hidden;
+        }
+        
+        .image-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .place-content {
@@ -229,6 +275,72 @@
             border-radius: 20px;
             font-size: 0.9rem;
             border: 1px solid var(--accent-color);
+        }
+        
+        /* Content Creator Bereich */
+        .content-creators {
+            padding: 3rem 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .creator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .creator-card {
+            background: linear-gradient(to bottom, rgba(59, 133, 38, 0.2), rgba(0, 0, 0, 0.5));
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .creator-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .creator-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background-color: var(--minecraft-dirt);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        
+        .creator-name {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .creator-channel {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        
+        .creator-link {
+            display: inline-block;
+            background-color: var(--button-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-color);
+        }
+        
+        .creator-link:hover {
+            background-color: var(--accent-color);
+            color: var(--button-color);
         }
         
         footer {
@@ -275,17 +387,40 @@
                 display: none;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            .banner-overlay h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .creator-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <div class="server-banner">
+        <!-- Ersetze 'server_banner.jpg' mit dem Pfad zu deinem Server-Bild -->
+        <img src="server_banner.jpg" alt="Koch-SMP Server Banner">
+        <div class="banner-overlay">
+            <div>
+                <h1>Koch-SMP Minecraft Server</h1>
+                <p>Eine Community von kreativen Bauern und Abenteurern</p>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
@@ -293,6 +428,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#places">Orte</a></li>
+                    <li><a href="#creators">Content Creator</a></li>
                     <li><a href="#join">Beitreten</a></li>
                     <li><a href="#about">Über uns</a></li>
                 </ul>
@@ -302,7 +438,7 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <h1>Willkommen auf Koch-SMP</h1>
+            <h2>Willkommen auf Koch-SMP</h2>
             <p>Entdecke die fantastischen Bauprojekte unserer Minecraft-Community und werde Teil unseres Servers!</p>
             <a href="#join" class="btn">Server beitreten</a>
         </div>
@@ -314,8 +450,14 @@
         <div class="place-card">
             <div class="place-image">
                 <div class="image-grid">
-                    <div class="image-cell">Bild 1: Die Vergessene Stadt - Übersicht</div>
-                    <div class="image-cell">Bild 2: Die Vergessene Stadt - Detailansicht</div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="vergessene_stadt_1.jpg" alt="Die Vergessene Stadt - Übersicht">
+                    </div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="vergessene_stadt_2.jpg" alt="Die Vergessene Stadt - Detailansicht">
+                    </div>
                 </div>
             </div>
             <div class="place-content">
@@ -333,8 +475,14 @@
         <div class="place-card">
             <div class="place-image">
                 <div class="image-grid">
-                    <div class="image-cell">Bild 1: Rexania - Villa von alesim2003</div>
-                    <div class="image-cell">Bild 2: Rexania - Häuser und Grundstücke</div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="rexania_1.jpg" alt="Rexania - Villa von alesim2003">
+                    </div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="rexania_2.jpg" alt="Rexania - Häuser und Grundstücke">
+                    </div>
                 </div>
             </div>
             <div class="place-content">
@@ -352,31 +500,43 @@
         <div class="place-card">
             <div class="place-image">
                 <div class="image-grid">
-                    <div class="image-cell">Bild 1: BenxBatus Base - Außenansicht</div>
-                    <div class="image-cell">Bild 2: BenxBatus Base - Innenansicht</div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="BenxBatu_1.jpg" alt="BenxBatu Base - Außenansicht">
+                    </div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="BenxBatu_2.jpg" alt="BenxBatu Base - Innenansicht">
+                    </div>
                 </div>
             </div>
             <div class="place-content">
-                <h3 class="place-title">BenxBatus Base</h3>
+                <h3 class="place-title">BenxBatu Base</h3>
                 <div class="place-meta">
-                    <span class="meta-tag">Technisch</span>
+                    <span class="meta-tag">Architektonisch</span>
                     <span class="meta-tag">Innovativ</span>
-                    <span class="meta-tag">Redstone-Projekte</span>
+                    <span class="meta-tag">Beeindruckend</span>
                 </div>
-                <p>BenxBatus hat eine der technisch fortschrittlichsten Basen auf dem Server geschaffen. Hier findest du ausgeklügelte Redstone-Mechanismen, automatische Farmen und innovative Maschinen, die das Spielerlebnis verbessern.</p>
-                <p>Die Base ist nicht nur funktional, sondern auch ästhetisch ansprechend gestaltet. Ein Besuch lohnt sich für alle, die sich für Redstone und technische Innovationen in Minecraft interessieren.</p>
+                <p>BenxBatu hat eine der beeindruckendsten Basen auf dem Server geschaffen. Die Base besticht durch ihre einzigartige Architektur und durchdachte Gestaltung.</p>
+                <p>Die Base ist ästhetisch ansprechend gestaltet und ein Besuch lohnt sich für alle Spieler, die Inspiration für ihre eigenen Bauprojekte suchen.</p>
             </div>
         </div>
         
         <div class="place-card">
             <div class="place-image">
                 <div class="image-grid">
-                    <div class="image-cell">Bild 1: Noxas Base - Außenansicht</div>
-                    <div class="image-cell">Bild 2: Noxas Base - Besondere Features</div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="Noxa_1.jpg" alt="Noxa Base - Außenansicht">
+                    </div>
+                    <div class="image-cell">
+                        <!-- Ersetze mit dem Pfad zu deinem Bild -->
+                        <img src="Noxa_2.jpg" alt="Noxa Base - Besondere Features">
+                    </div>
                 </div>
             </div>
             <div class="place-content">
-                <h3 class="place-title">absichtliche Ruine</h3>
+                <h3 class="place-title">Noxas Base</h3>
                 <div class="place-meta">
                     <span class="meta-tag">Architektonisch</span>
                     <span class="meta-tag">Detailverliebt</span>
@@ -384,6 +544,41 @@
                 </div>
                 <p>Noxa (früher Pekka) hat eine Base geschaffen, die durch ihre architektonische Brillanz und Liebe zum Detail besticht. Jeder Winkel zeigt durchdachtes Design und kreative Gestaltungsideen.</p>
                 <p>Von der Landschaftsgestaltung bis hin zur Innenarchitektur - Noxas Base ist ein Meisterwerk des Minecraft-Baus. Besucher können sich von der kreativen Gestaltung inspirieren lassen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-creators container" id="creators">
+        <h2 class="section-title">Content Creator</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Entdecke die YouTuber und Content Creator unseres Servers</p>
+        
+        <div class="creator-grid">
+            <div class="creator-card">
+                <div class="creator-icon">🎮</div>
+                <h3 class="creator-name">BenxBatu</h3>
+                <p class="creator-channel">YouTube Kanal</p>
+                <a href="#" class="creator-link">Kanal besuchen</a>
+            </div>
+            
+            <div class="creator-card">
+                <div class="creator-icon">🎥</div>
+                <h3 class="creator-name">Noxa</h3>
+                <p class="creator-channel">YouTube Kanal</p>
+                <a href="#" class="creator-link">Kanal besuchen</a>
+            </div>
+            
+            <div class="creator-card">
+                <div class="creator-icon">📺</div>
+                <h3 class="creator-name">wemmbu2003</h3>
+                <p class="creator-channel">YouTube Kanal</p>
+                <a href="#" class="creator-link">Kanal besuchen</a>
+            </div>
+            
+            <div class="creator-card">
+                <div class="creator-icon">🎬</div>
+                <h3 class="creator-name">Dein Kanal?</h3>
+                <p class="creator-channel">Werde Content Creator</p>
+                <a href="#join" class="creator-link">Mitmachen</a>
             </div>
         </div>
     </section>
