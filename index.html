@@ -251,77 +251,88 @@
         }
         
         /* Content Creator Bereich - mit Banner-Hintergrund */
-        .content-creators {
-            padding: 3rem 0;
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-        
-        .creator-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .creator-card {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--creator-bg, url('KochSMP_Serverbild1.png'));
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            border: 2px solid var(--accent-color);
-            transition: transform 0.3s ease;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .creator-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .creator-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            background-color: var(--minecraft-dirt);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-        }
-        
-        .creator-name {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .creator-channel {
-            color: #ccc;
-            margin-bottom: 1rem;
-        }
-        
-        .creator-link {
-            display: inline-block;
-            background-color: #000000;
-            color: var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: 1px solid var(--accent-color);
-        }
-        
-        .creator-link:hover {
-            background-color: var(--accent-color);
-            color: #000000;
-        }
-        
+.content-creators {
+    padding: 3rem 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.creator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.creator-card {
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+    overflow: hidden;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.creator-card:hover {
+    transform: translateY(-5px);
+}
+
+.creator-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 180px;
+}
+
+.creator-card-content {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.creator-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background-color: var(--minecraft-dirt);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.creator-name {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.creator-channel {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.creator-link {
+    display: inline-block;
+    background-color: #000000;
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color);
+}
+.creator-link:hover {
+    background-color: var(--accent-color);
+    color: #000000;
+}        
         /* Vote-Sektion */
         .voting-section {
             padding: 3rem 0;
