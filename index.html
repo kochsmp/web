@@ -687,5 +687,126 @@
             <p>Diese Seite ist nicht mit Mojang oder Microsoft verbunden.</p>
         </div>
     </footer>
+    <!-- ================= COOKIE BANNER ================= -->
+<style>
+  .cookie-banner {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .cookie-banner.hidden { display: none; }
+  .cookie-panel {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    padding: 1rem 1.25rem;
+    margin: 1rem;
+    font-family: system-ui, sans-serif;
+  }
+  .cookie-panel p { margin: 0.5rem 0; }
+  .cookie-actions { margin-top: 1rem; display:flex; gap:0.5rem; }
+  .cookie-actions button {
+    border: 0; border-radius: 8px; padding: 0.6rem 1rem; cursor: pointer;
+    font-weight: 600;
+  }
+  .accept { background: #0b74de; color: white; }
+  .settings { background: #eee; color: #222; }
+</style>
+
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-panel">
+    <p><strong>Cookie-Einstellungen</strong></p>
+    <p>Wir nutzen Cookies, um unsere Website zu verbessern. Du kannst alle Cookies akzeptieren oder nur notwendige zulassen.</p>
+    <div class="cookie-actions">
+      <button class="accept" id="cb-accept">Alle akzeptieren</button>
+      <button class="settings" id="cb-settings">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Einstellungen-Menü -->
+<div id="cookie-settings" class="cookie-banner hidden">
+  <div class="cookie-panel">
+    <p><strong>Cookie-Einstellungen</strong></p>
+    <p>Nur notwendige Cookies aktivieren (keine Statistik/Tracking-Cookies).</p>
+    <div class="cookie-actions">
+      <button class="accept" id="cb-save-min">Speichern (nur notwendig)</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const GA_MEAS_ID = "G-WQ5VHN5KPN"; // <-- hier deine Google Analytics ID eintragen
+
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    document.cookie = name + "=" + encodeURIComponent(value) +
+      ";path=/;SameSite=Lax;max-age=" + (days*24*60*60);
+  }
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  function initAnalytics() {
+    if (!GA_MEAS_ID || GA_MEAS_ID === "G-XXXXXXXXXX") return;
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEAS_ID;
+    document.head.appendChild(s);
+    const inline = document.createElement('script');
+    inline.textContent = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_MEAS_ID}');
+    `;
+    document.head.appendChild(inline);
+  }
+
+  const BANNER = document.getElementById("cookie-banner");
+  const SETTINGS = document.getElementById("cookie-settings");
+
+  function acceptAll() {
+    setCookie("cookie_consent", "all", 365);
+    BANNER.classList.add("hidden");
+    SETTINGS.classList.add("hidden");
+    initAnalytics();
+  }
+
+  function onlyNecessary() {
+    setCookie("cookie_consent", "necessary", 365);
+    BANNER.classList.add("hidden");
+    SETTINGS.classList.add("hidden");
+    // hier kein Analytics starten
+  }
+
+  // Event-Listener
+  document.getElementById("cb-accept").onclick = acceptAll;
+  document.getElementById("cb-settings").onclick = () => {
+    BANNER.classList.add("hidden");
+    SETTINGS.classList.remove("hidden");
+  };
+  document.getElementById("cb-save-min").onclick = onlyNecessary;
+
+  // Beim Laden prüfen
+  const consent = getCookie("cookie_consent");
+  if (consent === "all") {
+    initAnalytics();
+    BANNER.classList.add("hidden");
+  } else if (consent === "necessary") {
+    BANNER.classList.add("hidden");
+  } else {
+    BANNER.classList.remove("hidden");
+  }
+</script>
+<!-- ================= ENDE COOKIE BANNER ================= -->
+
 </body>
 </html>
