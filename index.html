@@ -324,6 +324,75 @@
             color: #000000;
         }
         
+        /* Vote-Sektion */
+        .voting-section {
+            padding: 3rem 0;
+            background-color: rgba(59, 133, 38, 0.1);
+            text-align: center;
+        }
+        
+        .vote-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .vote-card {
+            background: linear-gradient(to bottom, rgba(119, 78, 36, 0.3), rgba(0, 0, 0, 0.5));
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .vote-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vote-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background-color: var(--minecraft-dirt);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        
+        .vote-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .vote-description {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .vote-link {
+            display: inline-block;
+            background-color: #000000;
+            color: var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .vote-link:hover {
+            background-color: var(--accent-color);
+            color: #000000;
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+        
         footer {
             background-color: var(--secondary-color);
             padding: 2rem 0;
@@ -378,6 +447,10 @@
             .creator-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .vote-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Anleitung für das Banner */
@@ -401,6 +474,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#places">Orte</a></li>
                     <li><a href="#creators">Content Creator</a></li>
+                    <li><a href="#vote">Vote für uns</a></li>
                     <li><a href="#join">Beitreten</a></li>
                     <li><a href="#about">Über uns</a></li>
                 </ul>
@@ -581,6 +655,28 @@
                 <li>Gib die Server-IP ein:</li>
             </ol>
             <div class="server-ip">geheim</div>
+        </div>
+    </section>
+
+    <!-- Neue Vote-Sektion -->
+    <section class="voting-section container" id="vote">
+        <h2 class="section-title">Unterstütze unseren Server</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Deine Stimme hilft unserem Server, bekannter zu werden und mehr Spieler anzuziehen!</p>
+        
+        <div class="vote-grid">
+            <div class="vote-card">
+                <div class="vote-icon">⭐</div>
+                <h3 class="vote-title">Auf Minecraft-Server.net voten</h3>
+                <p class="vote-description">Deine Stimme auf einer der beliebtesten Minecraft-Server-Listen</p>
+                <a href="https://minecraft-server.net/vote/koch-smp" class="vote-link">Jetzt voten</a>
+            </div>
+            
+            <div class="vote-card">
+                <div class="vote-icon">🔥</div>
+                <h3 class="vote-title">Auf TopG.org voten</h3>
+                <p class="vote-description">Hilf uns, auf TopG.org bekannter zu werden</p>
+                <a href="https://topg.org/minecraft-servers/vote-koch-smp" class="vote-link">Jetzt voten</a>
+            </div>
         </div>
     </section>
 
