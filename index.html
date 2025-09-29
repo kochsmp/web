@@ -445,6 +445,66 @@
             border: 1px solid var(--accent-color);
         }
         
+        /* Map-Sektion */
+        .map-section {
+            padding: 3rem 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .map-container {
+            margin: 2rem auto;
+            max-width: 900px;
+            border: 3px solid var(--accent-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        
+        .map-placeholder {
+            background-color: var(--minecraft-dirt);
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            color: var(--light-color);
+        }
+        
+        .map-placeholder h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .map-placeholder p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .map-link {
+            display: inline-block;
+            background-color: #000000;
+            color: var(--accent-color);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            font-size: 1.2rem;
+        }
+        
+        .map-link:hover {
+            background-color: var(--accent-color);
+            color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px var(--accent-color);
+        }
+        
         /* Responsive Design */
         @media (max-width: 767px) {
             .nav-links {
@@ -480,6 +540,15 @@
                 aspect-ratio: auto; /* Auf Mobilgeräten automatische Höhe */
                 min-height: 250px; /* Mindesthöhe für Mobilgeräte */
             }
+            
+            .map-container {
+                margin: 1rem;
+            }
+            
+            .map-placeholder {
+                height: 400px;
+                padding: 1rem;
+            }
         }
 
         /* Anleitung für das Banner */
@@ -502,6 +571,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#places">Orte</a></li>
+                    <li><a href="#map">Server Map</a></li>
                     <li><a href="#creators">Content Creator</a></li>
                     <li><a href="#vote">Vote für uns</a></li>
                     <li><a href="#join">Beitreten</a></li>
@@ -639,6 +709,24 @@
         </div>
     </section>
 
+    <!-- Neue Map-Sektion -->
+    <section class="map-section container" id="map">
+        <h2 class="section-title">Server Map</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Erkunde unsere Welt mit der interaktiven Karte!</p>
+        
+        <div class="map-container">
+            <div class="map-placeholder">
+                <h3>Interaktive Server Map</h3>
+                <p>Hier siehst du eine Live-Übersicht unserer Minecraft-Welt. Erkunde die verschiedenen Regionen, finde die Base anderer Spieler und entdecke versteckte Orte!</p>
+                <a href="http://koch-smp.shulker.com:8080/" class="map-link" target="_blank">Zur interaktiven Karte</a>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <strong>Tipp:</strong> Die Karte wird regelmäßig aktualisiert und zeigt alle wichtigen Orte auf unserem Server. Du kannst nach Spielern suchen, Koordinaten anzeigen lassen und verschiedene Ansichten (Überlebens-, Nether-, End-Dimension) auswählen.
+        </p>
+    </section>
+
     <section class="content-creators container" id="creators">
         <h2 class="section-title">Content Creator</h2>
         <p style="text-align: center; margin-bottom: 2rem;">Entdecke die YouTuber und Content Creator unseres Servers</p>
@@ -695,7 +783,7 @@
         </div>
     </section>
 
-    <!-- Neue Vote-Sektion -->
+    <!-- Vote-Sektion -->
     <section class="voting-section container" id="vote">
         <h2 class="section-title">Unterstütze unseren Server</h2>
         <p style="text-align: center; margin-bottom: 2rem;">Deine Stimme hilft unserem Server, bekannter zu werden und mehr Spieler anzuziehen!</p>
