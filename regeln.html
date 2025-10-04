@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" href="KochSMP_Serverbild1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serverregeln | Koch-SMP Minecraft Server</title>
+    <style>
+        :root {
+            --primary-color: #3b8526;
+            --secondary-color: #774e24;
+            --accent-color: #ffd700;
+            --dark-color: #1a1a1a;
+            --light-color: #f5f5f5;
+            --minecraft-dirt: #5e4327;
+            --minecraft-grass: #5daa5d;
+            --minecraft-stone: #8f8f8f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23333" width="100" height="100"/><rect fill="%23222" width="50" height="50" x="0" y="0"/><rect fill="%23222" width="50" height="50" x="50" y="50"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Banner-Stil */
+        .rules-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('KochSMP_Serverbild1.png');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        
+        .rules-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0 #000;
+            color: var(--accent-color);
+        }
+        
+        .rules-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Regeln Container */
+        .rules-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .rules-category {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .category-title {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-title i {
+            margin-right: 0.5rem;
+        }
+        
+        .rule-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .rule-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .rule-description {
+            color: #ccc;
+        }
+        
+        .warning {
+            background-color: rgba(255, 0, 0, 0.1);
+            border-left-color: #ff4444;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .info-box {
+            background-color: rgba(59, 133, 38, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .rules-banner h1 {
+                font-size: 2.2rem;
+            }
+            
+            .rules-banner p {
+                font-size: 1rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Koch-SMP</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#places">Orte</a></li>
+                    <li><a href="index.html#map">Server Map</a></li>
+                    <li><a href="index.html#creators">Content Creator</a></li>
+                    <li><a href="index.html#vote">Vote für uns</a></li>
+                    <li><a href="index.html#join">Beitreten</a></li>
+                    <li><a href="regeln.html">Regeln</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="rules-banner">
+        <div class="container">
+            <h1>Serverregeln</h1>
+            <p>Damit alle Spieler eine faire und angenehme Zeit auf unserem Server haben, bitten wir dich, diese Regeln zu beachten.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="info-box">
+            <h3>Wichtig:</h3>
+            <p>Mit dem Betreten des Servers erklärst du dich mit diesen Regeln einverstanden. Bei Verstößen gegen die Regeln können Strafen von temporären Banns bis zu permanenten Ausschlüssen verhängt werden. Das Server-Team behält sich das Recht vor, die Regeln jederzeit zu ändern.</p>
+        </div>
+
+        <div class="rules-container">
+            <div class="rules-category">
+                <h2 class="category-title">Allgemeines Verhalten</h2>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Respektvoller Umgang</div>
+                    <div class="rule-description">
+                        Behandle alle Spieler mit Respekt. Beleidigungen, Diskriminierung, Rassismus, Sexismus oder andere respektlose Äußerungen sind strengstens verboten. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Kein Spam oder Werbung</div>
+                    <div class="rule-description">
+                        Das wiederholte Senden ähnlicher Nachrichten (Spam) sowie Werbung für andere Server oder Projekte ist nicht erlaubt. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Keine Provokationen oder Drohungen</div>
+                    <div class="rule-description">
+                        Provokationen im öffentlichen Chat sowie Drohungen in jeglicher Form sind verboten. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Angemessene Namen und Skins</div>
+                    <div class="rule-description">
+                        Die Verwendung von anstößigen, beleidigenden oder irreführenden Spielernamen und Skins ist nicht gestattet. 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rules-category">
+                <h2 class="category-title">Spielmechanik & Fairplay</h2>
+                
+                <div class="rule-item warning">
+                    <div class="rule-title">Cheaten & Hacks verboten</div>
+                    <div class="rule-description">
+                        Die Verwendung von Modifikationen, die unfaire Vorteile verschaffen, ist strengstens verboten. Dazu gehören: X-Ray (auch Resource Packs), Fly-Mods, Auto-Clicker, WorldDownloader und ähnliche Hilfsmittel. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Erlaubte Mods</div>
+                    <div class="rule-description">
+                        Erlaubt sind Performance-Mods wie Optifine, Sodium sowie Minimaps, InventorySorter und Litematica (nur für eigene Bauwerke). Bei Unsicherheit frage vorher das Team. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Bugs melden, nicht ausnutzen</div>
+                    <div class="rule-description">
+                        Gefundene Bugs sollten dem Server-Team gemeldet und nicht ausgenutzt werden. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Keine Zweitaccounts</div>
+                    <div class="rule-description">
+                        Die Verwendung von Zweitaccounts ist verboten, um sich keine Vorteile zu verschaffen oder Banns zu umgehen. 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rules-category">
+                <h2 class="category-title">Bauen, Gelände & Grundstücke</h2>
+                
+                <div class="rule-item warning">
+                    <div class="rule-title">Griefing verboten</div>
+                    <div class="rule-description">
+                        Das Zerstören, Verändern oder Beschädigen von Bauwerken, Gelände oder Eigentum anderer Spieler ist strengstens verboten. Dazu gehören auch das Stehlen von Items, das Töten von Tieren anderer Spieler und das Abernten ohne Nachpflanzen. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Abstand zu anderen Bauwerken</div>
+                    <div class="rule-description">
+                        Baue mit ausreichend Abstand (Richtwert: 64 Blöcke) zu den Bauwerken anderer Spieler. Bei näherem Bauen ist eine Erlaubnis einzuholen. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Bäume komplett abholzen</div>
+                    <div class="rule-description">
+                        Bei Bäumen sind die Stümpfe zu entfernen und neue Bäume zu pflanzen, um die Landschaft nicht zu verunstalten. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Angemessene Bauwerke</div>
+                    <div class="rule-description">
+                        Bauwerke mit obszönen, rassistischen, sexistischen oder anderweitig anstößigen Inhalten sind verboten. 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rules-category">
+                <h2 class="category-title">PvP & Spielerinteraktion</h2>
+                
+                <div class="rule-item">
+                    <div class="rule-title">PvP nur mit Einverständnis</div>
+                    <div class="rule-description">
+                        Kämpfe gegen andere Spieler sind nur erlaubt, wenn alle Beteiligten damit einverstanden sind. Das Töten ohne Absprache ist verboten. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Keine Spielerfallen</div>
+                    <div class="rule-description">
+                        Das Errichten von Fallen, die anderen Spielern schaden, ist nicht gestattet. Ausnahmen sind gekennzeichnete und gesicherte eigene Bereiche. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Betrug beim Handel</div>
+                    <div class="rule-description">
+                        Das Betrügen beim Handel mit anderen Spielern ist verboten und wird bestraft. 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rules-category">
+                <h2 class="category-title">Farmen, Tiere & Redstone</h2>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Tierhaltungslimit</div>
+                    <div class="rule-description">
+                        Jeder Spieler darf maximal 50 Tiere halten. Massentierhaltung auf wenigen Blöcken ist verboten - Tiere benötigen ausreichend Platz. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Automatische Farmen</div>
+                    <div class="rule-description">
+                        Farmen müssen abschaltbar sein und dürfen nicht laufen, wenn der Besitzer offline ist. AFK-Stehen an Farmen ist nur in Maßen erlaubt. Farmen mit extrem hohem Ertrag sind verboten. 
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Redstone-Einschränkungen</div>
+                    <div class="rule-description">
+                        Sehr große, serverlastige Redstone-Schaltungen sind verboten. Trichterketten sollten vermieden oder mit soliden Blöcken abgedeckt werden. Taktgeber (Clocks) und dauerhaft laufende Schaltungen sind zu vermeiden. 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rules-category">
+                <h2 class="category-title">Shop-Regeln</h2>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Ein Shop pro Spieler</div>
+                    <div class="rule-description">
+                        Jeder Spieler darf maximal einen Shop besitzen. Shops können nach eigenen Wünschen angepasst, geändert und umgebaut werden, solange es im eigenen Shop-Gebiet bleibt.
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Wöchentliche Miete</div>
+                    <div class="rule-description">
+                        Die wöchentliche Miete für den Shop muss regelmäßig bezahlt werden. Nach einer Woche ohne Bezahlung wird der Shop entfernt und für einen neuen Spieler freigegeben. Zurückgelassene Items werden nicht erstattet.
+                    </div>
+                </div>
+                
+                <div class="rule-item warning">
+                    <div class="rule-title">Angemessene Shop-Inhalte</div>
+                    <div class="rule-description">
+                        Sexuelle, rassistische und andere unangenehme oder anstößige Bauinhalte in Shops sind strengstens verboten.
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">PvP-Verbot in Shops</div>
+                    <div class="rule-description">
+                        In Shop-Bereichen ist PvP komplett verboten.
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Spezial-Shops</div>
+                    <div class="rule-description">
+                        Spezial-Shops müssen mit einem Ticket beantragt und mit mindestens einer Person vom Team besprochen werden.
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Berechtigungen</div>
+                    <div class="rule-description">
+                        Das Erteilen von Berechtigungen für andere Spieler am eigenen Shop ist erlaubt, geschieht jedoch auf eigene Verantwortung.
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-title">Keine Farmen in Shops</div>
+                    <div class="rule-description">
+                        Auto-Farmen, Spawner und Tierhaltungen sind in Shop-Bereichen nicht erlaubt.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <h3>Konsequenzen bei Regelverstößen</h3>
+            <p>Bei Verstößen gegen diese Regeln können je nach Schwere des Verstoßes verschiedene Strafen verhängt werden: Verwarnung, temporärer Ausschluss, Entzug von Berechtigungen oder permanenter Bann. Das Server-Team entscheidet über das Strafmaß. </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Koch-SMP Minecraft Server © 2025</p>
+            <p>Alle Rechte vorbehalten. Minecraft ist eine Marke von Mojang Studios.</p>
+            <p>Diese Seite ist nicht mit Mojang oder Microsoft verbunden.</p>
+        </div>
+    </footer>
+</body>
+</html>
